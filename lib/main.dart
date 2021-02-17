@@ -14,20 +14,19 @@ class myApp extends StatelessWidget {
         backgroundColor: Color(0xFF303F9F),
         body: SafeArea(
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               CircleAvatar(
-                radius: 50.0,
+                radius: 55.0,
                 backgroundImage: AssetImage('images/chaewon.jpg')
               ),
-              Center(
-                child: Text(
-                  'chaewon',
-                  style: TextStyle(
-                    fontFamily: 'Pacifico',
-                    color: Colors.white,
-                    fontSize: 40,
-                    fontWeight: FontWeight.bold
-                  ),
+              Text(
+                'chaewon',
+                style: TextStyle(
+                  fontFamily: 'Pacifico',
+                  color: Colors.white,
+                  fontSize: 45,
+                  fontWeight: FontWeight.bold
                 ),
               ),
               Text(
@@ -40,45 +39,42 @@ class myApp extends StatelessWidget {
                   fontWeight: FontWeight.bold
                 )
               ),
-              Container(
-                color: Colors.white,
-                padding: EdgeInsets.all(10.0),
-                margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 25.0),
-                child: Row(
-                  children: [
-                    Icon(
-                      Icons.phone,
-                      color: Color(0xFF212121)
-                    ),
-                    SizedBox(
-                      width: 10.0,
-                    ),
-                    Text(
-                      '+82 010 7686 6345',
-                      style: TextStyle(
-                        fontFamily: 'SourceSansPro',
-                        color: Color(0xFF212121),
-                        fontSize: 20.0,
-                        fontWeight: FontWeight.w400
-                      )
-                    ) 
-                  ]
+              SizedBox(
+                height: 20.0,
+                width: 150,
+                child: Divider(
+                  color: Color(0xFFC5CAE9),
                 ),
               ),
-              Container(
+              Card(
                 color: Colors.white,
                 margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 25.0),
-                padding: EdgeInsets.all(10.0),
-                child: Row(
-                  children: [
+                child: ListTile(
+                      leading: Icon(
+                        Icons.phone,
+                        color: Color(0xFF212121)
+                      ),
+                      title: Text(
+                        '+82 010 7686 6345',
+                        style: TextStyle(
+                          fontFamily: 'SourceSansPro',
+                          color: Color(0xFF212121),
+                          fontSize: 20.0,
+                          fontWeight: FontWeight.w400
+                        ),
+                      ),
+                    ) 
+                  ),
+              Card(
+                color: Colors.white,
+                margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 25.0),
+                child: ListTile(
+                    leading :
                     Icon(
                       Icons.email,
                       color: Color(0xFF212121)
                     ),
-                    SizedBox(
-                      width: 10.0,
-                    ),
-                    Text(
+                    title: Text(
                       'lcw729729@gmail.com',
                       style: TextStyle(
                         fontFamily: 'SourceSansPro',
@@ -86,7 +82,23 @@ class myApp extends StatelessWidget {
                         color: Color(0xFF212121)
                       ),
                     )
-                  ],
+                ),
+              ),
+              Card(
+                margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 25.0),
+                child: ListTile(
+                  leading: Icon(
+                    Icons.favorite,
+                    color: Colors.pink,
+                  ),
+                  title: Text(
+                    'WEB Frontend & Flutter',
+                    style: TextStyle(
+                      fontFamily: 'SourceSansPro',
+                      fontSize: 20.0,
+                      color: Color(0xFF212121)
+                    ),
+                  ),
                 ),
               )
             ],
@@ -96,3 +108,6 @@ class myApp extends StatelessWidget {
     );
   }
 }
+
+
+                
