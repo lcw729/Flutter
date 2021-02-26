@@ -20,5 +20,12 @@ flutter:
 
   uses-material-design: true
 
+  fonts:
+    - family: DotGothic16
+      fonts:
+      - asset: fonts/DotGothic16-Regular.ttf
+    - family: PermanentMarker
+      fonts:
+      - asset: fonts/PermanentMarker-Regular.ttf
   assets:
   - images/
