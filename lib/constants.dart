@@ -10,3 +10,15 @@ const TextStyle kLabelTextStyle =
 
 const TextStyle kNumberTextStyle =
     TextStyle(fontWeight: FontWeight.w900, fontSize: 50.0);
+
+const TextStyle kTitleTextStyle = 
+    TextStyle(fontSize: 50, fontWeight: FontWeight.w600);
+
+const TextStyle kStateTextStyle = 
+    TextStyle(color: Color(0xFF22E67C), fontSize: 30, fontWeight: FontWeight.w500);
+
+const TextStyle kBigNumberTextStyle =
+    TextStyle(fontSize: 100, fontWeight: FontWeight.bold);
+
+const TextStyle kBodyTextStyle = 
+    TextStyle(fontSize: 20, fontWeight: FontWeight.w500);
