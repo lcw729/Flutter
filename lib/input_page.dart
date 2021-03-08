@@ -1,12 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'reusableCard.dart';
-import 'genderCard.dart';
+import 'iconContent.dart';
+import 'constants.dart';
 
-const bottomContainerHeight = 80.0;
-const activeCardColor = Color(0xFF1D1F33);
-const inactiveCardcolour = Color(0xFF111328);
-const bottomContainerColor = Color(0xFFEB1555);
 enum Gender { female, male }
 
 class InputPage extends StatefulWidget {
@@ -15,48 +12,47 @@ class InputPage extends StatefulWidget {
 }
 
 class _InputPageState extends State<InputPage> {
-  
   Gender selectedGender;
-
+  int height = 180;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text('BMI CALCULATOR'),
       ),
-      body: Column(children: [
+      body: Column(crossAxisAlignment: CrossAxisAlignment.stretch, children: [
         Expanded(
           child: Row(
             children: [
               Expanded(
-                child: GestureDetector(
-                  onTap: () {
+                child: ReusableCard(
+                  onPress: () {
                     setState(() {
                       selectedGender = Gender.male;
                     });
                   },
-                  child: ReusableCard(
-                    colour: selectedGender == Gender.male ? activeCardColor : inactiveCardcolour,
-                    cardChild: GenderCard(
-                      genderText: 'MALE',
-                      genderIcon: FontAwesomeIcons.mars,
-                    ),
+                  colour: selectedGender == Gender.male
+                      ? kActiveCardColor
+                      : inactiveCardcolour,
+                  cardChild: IconContent(
+                    genderText: 'MALE',
+                    genderIcon: FontAwesomeIcons.mars,
                   ),
                 ),
               ),
               Expanded(
-                child: GestureDetector(
-                  onTap: () {
+                child: ReusableCard(
+                  onPress: () {
                     setState(() {
                       selectedGender = Gender.female;
                     });
                   },
-                  child: ReusableCard(
-                    colour: selectedGender == Gender.female ? activeCardColor : inactiveCardcolour,
-                    cardChild: GenderCard(
-                      genderText: 'FEMALE',
-                      genderIcon: FontAwesomeIcons.venus,
-                    ),
+                  colour: selectedGender == Gender.female
+                      ? kActiveCardColor
+                      : inactiveCardcolour,
+                  cardChild: IconContent(
+                    genderText: 'FEMALE',
+                    genderIcon: FontAwesomeIcons.venus,
                   ),
                 ),
               ),
@@ -65,7 +61,48 @@ class _InputPageState extends State<InputPage> {
         ),
         Expanded(
           child: ReusableCard(
-            colour: activeCardColor,
+            colour: kActiveCardColor,
+            cardChild: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                  'HEIGHT',
+                  style: kLabelTextStyle,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.baseline,
+                  textBaseline: TextBaseline.alphabetic,
+                  children: [
+                    Text(height.toString(), style: kNumberTextStyle),
+                    Text(
+                      'cm',
+                      style: kLabelTextStyle,
+                    )
+                  ],
+                ),
+                SliderTheme(
+                  data: SliderThemeData(
+                    activeTrackColor: Colors.white,
+                    inactiveTrackColor: Color(0xFF8D8E98),
+                    thumbColor: Color(0xFFEB1555),
+                    overlayColor: Color(0x29EB1555),
+                    thumbShape: RoundSliderThumbShape(enabledThumbRadius: 15.0),
+                    overlayShape: RoundSliderOverlayShape(overlayRadius: 30.0)
+                  ),
+                  child: Slider(
+                    value: height.toDouble(),
+                    min: 120.0,
+                    max: 220.0,
+                    onChanged: (double value) {
+                      setState(() {
+                        height = value.round();
+                      });
+                    },
+                  ),
+                )
+              ],
+            ),
           ),
         ),
         Expanded(
@@ -73,21 +110,21 @@ class _InputPageState extends State<InputPage> {
             children: [
               Expanded(
                 child: ReusableCard(
-                  colour: activeCardColor,
+                  colour: kActiveCardColor,
                 ),
               ),
               Expanded(
                   child: ReusableCard(
-                colour: activeCardColor,
+                colour: kActiveCardColor,
               )),
             ],
           ),
         ),
         Container(
-          color: bottomContainerColor,
+          color: kBottomContainerColor,
           margin: EdgeInsets.only(top: 15.0),
           width: double.infinity,
-          height: bottomContainerHeight,
+          height: kBottomContainerHeight,
         )
       ]),
     );
