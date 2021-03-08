@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'constants.dart';
+import '../constants.dart';
 
 
 class ButtonButton extends StatelessWidget {
-  const ButtonButton({@required this.onTap, this.text});
+  const ButtonButton({@required this.onTap, this.buttonTitle});
 
   final Function onTap;
-  final String text;
+  final String buttonTitle;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -16,7 +16,7 @@ class ButtonButton extends StatelessWidget {
           child: Padding(
             padding: const EdgeInsets.only(bottom: 8.0),
             child: Text(
-              text,
+              buttonTitle,
               style: TextStyle(fontSize: 25.0, fontWeight: FontWeight.bold),
             ),
           ),

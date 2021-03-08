@@ -15,7 +15,7 @@ const TextStyle kTitleTextStyle =
     TextStyle(fontSize: 50, fontWeight: FontWeight.w600);
 
 const TextStyle kStateTextStyle = 
-    TextStyle(color: Color(0xFF22E67C), fontSize: 30, fontWeight: FontWeight.w500);
+    TextStyle(color: Color(0xFF22E67C), fontSize: 20, fontWeight: FontWeight.w600);
 
 const TextStyle kBigNumberTextStyle =
     TextStyle(fontSize: 100, fontWeight: FontWeight.bold);

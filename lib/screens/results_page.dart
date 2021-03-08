@@ -1,9 +1,17 @@
-import 'package:bmi_calculator/reusableCard.dart';
+import 'package:bmi_calculator/components/reusableCard.dart';
 import 'package:flutter/material.dart';
-import 'constants.dart';
-import 'button_button.dart';
+import '../constants.dart';
+import '../components/button_button.dart';
+
 
 class ResultsPage extends StatelessWidget {
+
+  ResultsPage({@required this.bmiValue,@required this.bmiResult,@required this.interpretation});
+
+  final String bmiValue;
+  final String bmiResult;
+  final String interpretation;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -15,6 +23,7 @@ class ResultsPage extends StatelessWidget {
         children: [
           Container(
             margin: EdgeInsets.all(15.0),
+            alignment: Alignment.bottomLeft,
             child: Text(
               'Your Result',
               style: kTitleTextStyle,
@@ -28,10 +37,10 @@ class ResultsPage extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  Text('NORMAL', style: kStateTextStyle),
-                  Text('22.1', style: kBigNumberTextStyle),
+                  Text(bmiResult.toUpperCase(), style: kStateTextStyle),
+                  Text(bmiValue, style: kBigNumberTextStyle),
                   Text(
-                    'You have a normal body weight. Good job!',
+                    interpretation,
                     style: kBodyTextStyle,
                     textAlign: TextAlign.center,
                   )
@@ -39,10 +48,11 @@ class ResultsPage extends StatelessWidget {
               ),
             ),
           ),
-          
-                  ButtonButton(onTap: (){
-                    Navigator.pop(context);
-                  },text: 'RE-CALCULATE')
+          ButtonButton(
+              onTap: () {
+                Navigator.pop(context);
+              },
+              buttonTitle: 'RE-CALCULATE')
         ],
       ),
     );
