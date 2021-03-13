@@ -3,7 +3,7 @@ import 'package:http/http.dart' as http;
 import 'location.dart';
 import 'dart:convert';
 
-const apiKey = '88b83ade7037c995188184f8fb9c0107';
+const apiKey = '';
 
 class LoadingScreen extends StatefulWidget {
   @override
