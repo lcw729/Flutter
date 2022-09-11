@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "702931343773",
+    "firebase_url": "https://dsc-solution-challenge-e0d2f.firebaseio.com",
+    "project_id": "dsc-solution-challenge-e0d2f",
+    "storage_bucket": "dsc-solution-challenge-e0d2f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:702931343773:android:975573084e5311f68a7774",
+        "android_client_info": {
+          "package_name": "com.finalvote.hufs.vote_final"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "702931343773-c2sfdg3tvb15qhudnj1bkefqg1c0oior.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCPlt85Jb2ft0LjGmBYVM2ZJdws9zBMfgg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "702931343773-c2sfdg3tvb15qhudnj1bkefqg1c0oior.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
